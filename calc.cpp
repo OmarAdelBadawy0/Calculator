@@ -58,25 +58,19 @@ int main(){
 
 bool BigDecimalInt:: operator< (BigDecimalInt anotherDec){
 
-        if(decimalNum.size() < anotherDec.size()){
-            return true;
-        }
         if(decimalNum.size() > anotherDec.size()){
             return false;
         }
 
         for (int i = 0; i < decimalNum.size(); i++)
         {
-            if (decimalNum[i] < anotherDec[i])
-            {
-                return true;
-            }else if (decimalNum[i] > anotherDec[i])
+            if (decimalNum[i] > anotherDec[i])
             {
                 return false;
             }
         }
 
-        return false;
+        return true;
     }
 
 
@@ -85,22 +79,16 @@ bool BigDecimalInt:: operator> (BigDecimalInt anotherDec){
         if(decimalNum.size() < anotherDec.size()){
             return false;
         }
-        if(decimalNum.size() > anotherDec.size()){
-            return true;
-        }
 
         for (int i = 0; i < decimalNum.size(); i++)
         {
             if (decimalNum[i] < anotherDec[i])
             {
                 return false;
-            }else if (decimalNum[i] > anotherDec[i])
-            {
-                return true;
             }
         }
 
-        return false;
+        return true;
     }
 
 bool BigDecimalInt:: operator==(BigDecimalInt anotherDec){
